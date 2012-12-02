@@ -4,20 +4,20 @@ return array(
         'invokables' => array(
             'Blog\Controller\Blog' => 'Blog\Controller\BlogController'
         ),
-        'router' => array(
-            'routes' => array(
-                'blog' => array(
-                    'type'    => 'segment',
-                    'options' => array(
-                        'route'    => '/blog[/:action][/:id]',
-                        'constraints' => array(
-                            'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            'id'     => '[0-9]+',
-                        ),
-                        'defaults' => array(
-                            'controller' => 'Blog\Controller\Blog',
-                            'action'     => 'index',
-                        ),
+    ),
+    'router' => array(
+        'routes' => array(
+            'blog' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/blog[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Blog\Controller\Blog',
+                        'action'     => 'index',
                     ),
                 ),
             ),
