@@ -21,4 +21,18 @@ class Module
     {
         return include __DIR__ . '/config/module.config.php';
     }
+
+    public function getServiceConfiguration()
+    {
+        return array(
+            /*'factories' => array(
+                'blog-table' =>  function($sm) {
+                    $dbAdapter = $sm->get('db-adapter');
+                    $table = new BlogTable($dbAdapter);
+                    return $table;
+                },
+            ),*/
+        );
+    }
+
 }
