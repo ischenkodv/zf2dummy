@@ -4,6 +4,9 @@ return array(
         'Application',
         'DoctrineModule',
         'DoctrineORMModule',
+        'ZfcBase',
+        'ZfcUser',
+        'ZfcUserDoctrineORM',
         'Blog'
     ),
     'module_listener_options' => array(

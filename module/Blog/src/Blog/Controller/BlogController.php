@@ -42,10 +42,19 @@ class BlogController extends AbstractActionController
     {
     }
 
+    private function _getCurrentUser()
+    {
+        $authService = $this->getServiceLocator()->get('zfcuser_auth_service');
+        $currentUser = $authService->getIdentity();
+
+        return $currentUser;
+    }
+
     public function indexAction()
     {
         return new ViewModel(array(
-            'posts' => $this->getEntityManager()->getRepository('Blog\Entity\Post')->findAll() 
+            'posts' => $this->getEntityManager()->getRepository('Blog\Entity\Post')->findAll(),
+            'user'  => $this->_getCurrentUser()
         ));
     }
 

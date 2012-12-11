@@ -8,3 +8,9 @@
     </div>
     <?php endforeach; ?>
 <?php endif; ?>
+
+<?php if ($this->user) : ?>
+    You are logged in as <strong><?= $this->user->getEmail() ?></strong> (<a href="/user/logout">logout</a>)
+<?php else: ?>
+    You can login <a href="/user/login">here</a>
+<?php endif; ?>
