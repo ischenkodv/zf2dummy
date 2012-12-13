@@ -58,30 +58,4 @@ class BlogController extends AbstractActionController
         ));
     }
 
-    public function addAction()
-    {
-    }
-
-    public function editAction()
-    {
-    }
-
-    public function deleteAction()
-    {
-    }
-
-    /*public function setPostTable(PostTable $postTable)
-    {
-        $this->postTable = $postTable;
-        return $this;
-    }
-
-    public function getPostTable()
-    {
-        if (!$this->postTable) {
-            $sm = $this->getServiceLocator();
-            $this->postTable = $sm->get('post-table');
-        }
-        return $this->postTable;
-    }*/
 }

@@ -4,11 +4,25 @@ namespace Blog;
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Blog\Controller\Blog' => 'Blog\Controller\BlogController'
+            'Blog\Controller\Blog' => 'Blog\Controller\BlogController',
+            'BlogAdmin\Controller\Index' => 'BlogAdmin\Controller\IndexController'
         ),
     ),
     'router' => array(
         'routes' => array(
+            'blog_admin' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/blog/admin/index[/:action]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'BlogAdmin\Controller\Index',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
             'blog' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -43,5 +57,5 @@ return array(
                 )
             )
         )
-    )
+    ),
 );

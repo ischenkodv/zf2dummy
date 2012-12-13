@@ -11,7 +11,8 @@ class Module
             ),
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+                    'BlogAdmin' => __DIR__ . '/src/Admin'
                 )
             )
         );
@@ -24,15 +25,7 @@ class Module
 
     public function getServiceConfiguration()
     {
-        return array(
-            /*'factories' => array(
-                'blog-table' =>  function($sm) {
-                    $dbAdapter = $sm->get('db-adapter');
-                    $table = new BlogTable($dbAdapter);
-                    return $table;
-                },
-            ),*/
-        );
+        return array();
     }
 
 }

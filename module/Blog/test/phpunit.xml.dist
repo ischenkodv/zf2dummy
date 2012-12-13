@@ -4,6 +4,7 @@
     <testsuites>
         <testsuite name="zf2tutorial">
             <directory>./BlogTest</directory>
+            <directory>./AdminTest</directory>
         </testsuite>
     </testsuites>
 </phpunit>
