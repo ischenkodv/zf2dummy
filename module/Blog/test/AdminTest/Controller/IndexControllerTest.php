@@ -9,6 +9,7 @@ use Zend\Mvc\MvcEvent;
 use Zend\Mvc\Router\RouteMatch;
 use Zend\Mvc\Router\Http\TreeRouteStack as HttpRouter;
 use PHPUnit_Framework_TestCase;
+use ZfcUserDoctrineORM\Entity\User;
 
 class IndexControllerTest extends PHPUnit_Framework_TestCase
 {
@@ -32,6 +33,17 @@ class IndexControllerTest extends PHPUnit_Framework_TestCase
         $this->event->setRouteMatch($this->routeMatch);
         $this->controller->setEvent($this->event);
         $this->controller->setServiceLocator($serviceManager);
+
+        $user = new User;
+        $user->setId(1);
+        $user->setEmail('test@example.com');
+        $authServiceMock = $this->getMock('Zend\Authentication\AuthenticationService', array('getIdentity'));
+        $authServiceMock->expects($this->once())
+            ->method('getIdentity')
+            ->will($this->returnValue($user));
+
+        $serviceManager->setAllowOverride(true);
+        $serviceManager->setService('zfcuser_auth_service', $authServiceMock);
     }
 
     public function testAddActionCanBeAccessed()

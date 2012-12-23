@@ -22,8 +22,6 @@ return array(
             ),
             'blog' => array(
                 'label' => 'Blog',
-                //'controller' => 'blog',
-                //'action' => 'index',
                 'route' => 'blog',
             ),
         ),
