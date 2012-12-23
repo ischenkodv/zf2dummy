@@ -30,9 +30,10 @@
                     </a>
                     <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
                     <div class="nav-collapse collapse">
-                        <ul class="nav">
+                        <?= $this->navigation('navigation')->menu()->setUlClass('nav'); ?>
+                        <!--ul class="nav">
                             <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
-                        </ul>
+                        </ul-->
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
